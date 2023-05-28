@@ -12,9 +12,9 @@ function whereToBuy() {
 }
 
 function support() {
-    window.location = "contact.html";
+    window.location = "contact.php";
 }
 
 function visitUs() {
-    window.location = "contact.html";
+    window.location = "contact.php";
 }

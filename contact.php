@@ -179,7 +179,7 @@ echo '<!DOCTYPE html>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="shop.html">Shop Now</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
                 <li><a href="login.html">Log in</a></li>
                 <li><a href="signup.html">Sign up</a></li>
             </div>
