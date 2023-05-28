@@ -54,54 +54,62 @@
     </main>
     <script>
         let socket = io("http://localhost:4000");
+        socket.emit("create-room", {userId:Number(localStorage.getItem('user_id') )} );
         let chatboxButton = document.getElementById("chatbox-button");
         const messages = []
+        let roomParticipant1 = null
+        let roomParticipant2 = null
+
+        let creatorId = null
+        let receiverId = null
 
         const form = document.getElementById("chat-form");
         let textarea = document.getElementById("message");
         const button = document.getElementById("send-message-button");
 
+        socket.on("display-messages", (data) => {
+            console.log('data entered ', data)
+            let messageContainer = document.getElementById('chat-messages')
+            const ul = document.getElementById('all-messages')
+        
+            messageContainer.innerHTML = ''
+                ul.innerHTML = ''
+            data?.messages?.map(message => {
+                const messageInput = document.createElement("li");
+                messageInput.innerText = message.content
+                messageInput.className = message.creator_id === Number(localStorage.getItem('user_id'))? 'user-message':'admin-message'
+                ul.append(messageInput)
+                messages.push(message)
+            })
+                messageContainer.append(ul)
+            console.log("messages received: ", data);
+        })
+
+        socket.on("display-message", (data) => {
+            const dataReceived = JSON.parse(data)
+            console.log('dataRwceived ', dataReceived)
+            roomParticipant1 = dataReceived.participant1
+            roomParticipant2 = dataReceived.participant2
+        })
+
         form.addEventListener("submit", function (event) {
+    
             console.log("submit form");
             event.preventDefault();
             let value = textarea.value
-            let creatorId = null
-            let receiverId = null
+        
             if (localStorage.getItem("user_id")) {
                 creatorId = Number(localStorage.getItem("user_id"))
-                receiverId = 3
-            } else {
-                creatorId = 3,
-                    // hardcoded for now
-                    receiverId = 6
-            }
+                receiverId = roomParticipant1 === creatorId ? roomParticipant2 : roomParticipant1
+            } 
             const dataToSend = {
                 creatorId: creatorId,
                 receiverId: receiverId,
                 content: value
             }
             textarea.value=''
-            console.log(value);
             socket.emit("message", JSON.stringify(dataToSend))
            
-        })
-        socket.on("dispay-message", (data) => {
-            console.log(data)
-        })
-
-        socket.on("display-messages", (data) => {
-            const messageContainer = document.getElementById('chat-messages')
-            const ul = document.getElementById('all-messages')
-            // const allMessages = JSON.parse(messages)
-         
-            data.messages.map(message => {
-                const messageInput = document.createElement("li");
-                messageInput.innerText = message.content
-                ul.append(messageInput)
-                messages.push(message)
-            })
-                messageContainer.append(ul)
-            console.log("messages received: ", messages);
         })
     </script>
     <footer class="footer-with-gray-background">
