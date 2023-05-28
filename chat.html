@@ -98,10 +98,11 @@
             console.log("submit form");
             event.preventDefault();
             let value = textarea.value
-        
+            
+            console.log("Local Storage", localStorage.getItem("user_id"));
             if (localStorage.getItem("user_id")) {
                 creatorId = Number(localStorage.getItem("user_id"))
-                receiverId = roomParticipant1 === creatorId ? roomParticipant2 : roomParticipant1
+                receiverId = sessionStorage.getItem('participant_id')?Number(sessionStorage.getItem('participant_id')):roomParticipant1 === creatorId ? roomParticipant2 : roomParticipant1
             } 
             const dataToSend = {
                 creatorId: creatorId,

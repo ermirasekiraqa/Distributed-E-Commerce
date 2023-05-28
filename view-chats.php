@@ -53,28 +53,25 @@ if (!isset($_SESSION['email'])) {
         // Check if there are any rows returned
         if ($statement->rowCount() > 0) {
             // Display the participant IDs
-            echo "<h2 id='header'>Participant IDs:</h2>";
+            echo "<h2 id='header'>Participant IDs</h2>";
             echo "<ul>";
             while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                 $adminID = $_SESSION['admin_id'];
                 $idToShow = $row['participant_1_id'];
                 $participantFirstName = '';
                 $participantLastName = '';
-                if ($row['participant_1_id'] === $_SESSION['admin_id']) {
+                if ($row['participant_1_id'] === (int)$adminID) {
                     $idToShow = $row['participant_2_id'];
-                    
                 }
-                $query = "SELECT * FROM users WHERE id = $idToShow";
-                    $statement = $pdo->query($query);
-                    if ($statement->rowCount() > 0) {
-                        $row = $statement->fetch(PDO::FETCH_ASSOC);
-                        $participantFirstName = $row['name'];
-                        $participantLastName = $row['last_name'];
+                $secondQuery = "SELECT * FROM users WHERE id = $idToShow";
+                    $secondStatement = $pdo->query($secondQuery);
+                    if ($secondStatement->rowCount() > 0) {
+                        $secondRow = $secondStatement->fetch(PDO::FETCH_ASSOC);
+                        $participantFirstName = $secondRow['name'];
+                        $participantLastName = $secondRow['last_name'];
                     }
                 echo "<li id='participant' class='".$idToShow."'>User: " . $participantFirstName . " " . $participantLastName ."</li>";
-                // echo "<li>Participant 1 ID: " . $row['participant_1_id'] . "</li>";
-                // echo "<li>Participant 2 ID: " . $row['participant_2_id'] . "</li>";
-                // echo "<br>";
+                echo "<br>";
             }
             echo "</ul>
             </div>";

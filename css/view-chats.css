@@ -13,15 +13,20 @@ body {
     background-color: var(--background-grey);
 }
 
+.users-container {
+    padding: var(--padding);
+}
+
 #header {
     color: var(--light-pink);
 }
 
 #participant {
     cursor: pointer;
+    list-style: none;
 }
 
 #participant:hover {
     color: var(--light-grey);
-    scale: 1.1;
+    font-size: 18px;
 }
