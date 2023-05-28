@@ -29,6 +29,9 @@ if (isset($_SESSION['email'])) {
                 <a href="orders-table.php" class="square">
                     <p>View Orders</p>
                 </a>
+                <a href="view-chats.php" class="square">
+                <p>View Chats</p>
+            </a>
             </div>
         </body>
         </html>';
