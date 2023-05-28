@@ -1,0 +1,32 @@
+:root {
+    /* CSS variables */
+    --padding: 3rem;
+    --background-grey: #eeeeee;
+    --light-grey: #7c7a7a;
+    --light-pink: #dc5774;
+    --font-size: 14px;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
+    background-color: var(--background-grey);
+}
+
+.users-container {
+    padding: var(--padding);
+}
+
+#header {
+    color: var(--light-pink);
+}
+
+#participant {
+    cursor: pointer;
+    list-style: none;
+}
+
+#participant:hover {
+    color: var(--light-grey);
+    font-size: 18px;
+}

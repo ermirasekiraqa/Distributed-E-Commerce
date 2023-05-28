@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION['email'] = $email;
       $_SESSION['role'] = $row['role']; // Store the role value in session
       if ($row['role'] == 'admin') {
+        $_SESSION['admin_id'] = $row['id'];
         echo '<script>
                 localStorage.setItem("user_id", ' . $row['id'] . ');
                 window.location = "admin_dashboard.php";
@@ -104,3 +105,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 }
+
+?>
+
