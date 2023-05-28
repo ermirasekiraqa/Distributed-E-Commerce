@@ -171,18 +171,18 @@ if (isset($_SESSION['email'])) {
                         <p>Category:</p>
                     </label>
                     <div class="radio-group">
-                        <input type="radio" id="men" name="category" value="men" required>
+                    <input type="radio" id="men" name="category" value="Men" >
 
 
-                        <label for="men">
-                            <p>Men</p>
-                        </label>
-                        <input type="radio" id="women" name="category" value="women" required>
-                        <label for="women">
-                            <p>Women</p>
-                        </label>
-                    </div>
-                </div><br><br>
+                    <label for="Men">
+                        <p>Men</p>
+                    </label>
+                    <input type="radio" id="women" name="category" value="Women" >
+                    <label for="Women">
+                        <p>Women</p>
+                    </label>
+                </div>
+            </div><br><br>
                 <button class="form-button" type="submit" value="Add Product">Add Product</button>
             </form>
 
@@ -215,13 +215,15 @@ if (isset($_SESSION['email'])) {
                         <p>Category:</p>
                     </label>
                     <div class="radio-group">
-                        <input type="radio" id="men" name="category" value="men">
-                        <label for="male">
-                            <p>Male</p>
+                        <input type="radio" id="men" name="category" value="Men" >
+
+
+                        <label for="Men">
+                            <p>Men</p>
                         </label>
-                        <input type="radio" id="women" name="category" value="women">
-                        <label class="category-options" for="female">
-                            <p>Female</p>
+                        <input type="radio" id="women" name="category" value="Women" >
+                        <label for="Women">
+                            <p>Women</p>
                         </label>
                     </div>
                 </div><br><br>
