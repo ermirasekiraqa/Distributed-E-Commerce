@@ -111,8 +111,8 @@ echo '<!DOCTYPE html>
         </section>';
 
 
-        if (isset($_SESSION['email']) && isset($_SESSION['role']) && $_SESSION['role'] === 'customer') {
-            echo '<section class="chat-box-container">
+if (isset($_SESSION['email']) && isset($_SESSION['role']) && $_SESSION['role'] === 'customer') {
+    echo '<section class="chat-box-container">
             <div class="chatbox">
                 <div class="chatbox-button">
                     <button id="chatbox-button"><img src="images/chatbox-icon.svg" /></button>
@@ -138,19 +138,20 @@ echo '<!DOCTYPE html>
                 </div>
             </div>
         </section>';
-        echo '<script>
-        // let socket = io("http://localhost:4000");
+    echo '<script>
+         let socket = io("http://localhost:4000");
         let chatboxButton = document.getElementById("chatbox-button");
         chatboxButton.addEventListener("click", function () {
-            let socket = io("http://localhost:4000");
-            socket.emit("message", "hello");
+            socket.emit("create-room", {userId: localStorage.getItem("user_id")});
             console.log("here");
-            // socket.cn()
+        })
+        socket.on("dispay-messages",(data)=>{
+            console.log(data)
         })
     </script>';
-        }
+}
 
-    echo '</main>
+echo '</main>
     <footer>
         <section class="useful-info">
             <div class="get-in-touch">
@@ -207,4 +208,3 @@ echo '<!DOCTYPE html>
 </body>
 
 </html>';
-?>
