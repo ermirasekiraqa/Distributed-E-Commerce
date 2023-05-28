@@ -145,7 +145,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['role']) && $_SESSION['role'] =
             socket.emit("create-room", {userId: localStorage.getItem("user_id")});
             console.log("here");
         })
-        socket.on("dispay-messages",(data)=>{
+        socket.on("dispay-message",(data)=>{
             console.log(data)
         })
     </script>';
