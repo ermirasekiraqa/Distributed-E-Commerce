@@ -1,0 +1,61 @@
+:root {
+    /* CSS variables */
+    --padding: 3rem;
+    --background-grey: #eeeeee;
+    --light-grey: #7c7a7a;
+    --light-pink: #dc5774;
+    --font-size: 14px;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: var(--padding);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container form input, select {
+    height: 30px;
+    border: 1.5px solid var(--light-grey);
+}
+
+.container form h1 {
+    /* color: var(--light-pink); */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#place-order-button {
+    margin-top: 30px;
+    background-color: var(--light-pink);
+    border: none;
+    height: 40px;
+    font-size: var(--font-size);
+    color: white;
+    cursor: pointer;
+}
+
+#place-order-button:hover {
+    color: var(--background-grey);
+    scale: 1.1;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#payment-method-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

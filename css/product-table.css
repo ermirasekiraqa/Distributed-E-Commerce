@@ -1,0 +1,68 @@
+:root {
+    --light-pink: #dc5774;
+    --background-grey: #eeeeee;
+    --light-grey: #7c7a7a;
+  }
+  body{
+   
+/* background-color: var(--background-grey); */
+background-image: url('../images/entry-background.jpg');
+background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+background-size: cover;
+opacity: 0.99;
+
+  }
+table {
+    
+    font-family: 'Ubuntu', sans-serif;
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: -5px -10px 10px 2px #d9d9d9, 5px 10px 15px 2px #d9d9d9,
+    -5px 10px 10px 2px #d9d9d9, 5px -10px 15px 2px #d9d9d9;
+    
+
+}
+
+caption {
+    color: var(--light-pink);
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 40px;
+
+}
+
+thead th {
+    background-color: var(--light-pink);
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+   
+}
+
+tbody td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+tbody tr:hover {
+    background-color: #7c7a7a;
+    color: #fff;
+}
+
+td img{
+    width: 140px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  object-fit: center;
+}

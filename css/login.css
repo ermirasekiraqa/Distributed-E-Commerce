@@ -1,0 +1,98 @@
+:root {
+  --light-pink: #dc5774;
+  --background-grey: #eeeeee;
+  --light-grey: #7c7a7a;
+}
+
+body {
+  overflow: hidden;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  gap: 50px;
+  background-color: var(--background-grey);
+}
+
+main h1 {
+  text-align: center;
+  font-size: 35px;
+  color: var(--light-pink);
+}
+
+#signup-link {
+  color: gray;
+  margin: auto;
+  padding: 30px;
+  font-size: 14px;
+}
+
+#signup-link:hover {
+  scale: 1.2;
+  font-weight: 600;
+}
+
+#login-form {
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  display: grid;
+  padding: 40px;
+  gap: 15px;
+  width: 300px;
+  place-items: center;
+  border-radius: 5px;
+  height: 90%;
+  background-color: white;
+  box-shadow: -5px -10px 10px 2px #d9d9d9, 5px 10px 15px 2px #d9d9d9,
+    -5px 10px 10px 2px #d9d9d9, 5px -10px 15px 2px #d9d9d9;
+}
+
+#login-form input {
+  border: solid 1px var(--light-pink);
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  width: 80%;
+}
+
+#login-form input::placeholder {
+  font-size: 12px;
+}
+
+#login-form button {
+  padding: 8px 5px;
+  font-size: 14px;
+  background-color: var(--light-pink);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 85%;
+}
+
+#login-form button:hover {
+  scale: 1.1;
+}
+
+#main-page-link {
+  margin: auto;
+  color: gray;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#main-page-link:hover {
+  scale: 1.2;
+}
+
+#forgot-password {
+  color: var(--light-grey);
+  font-size: 10px;
+  text-align: right;
+}
+
+#forgot-password:hover {
+  scale: 1.2;
+}

@@ -1,0 +1,129 @@
+:root {
+  /* CSS variables */
+  --padding: 3rem;
+  --background-grey: #eeeeee;
+  --light-grey: #7c7a7a;
+  --light-pink: #dc5774;
+  --font-size: 14px;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  overflow-x: hidden;
+}
+
+.shopping-cart-and-button {
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart-table tr td img {
+  width: 30%;
+}
+
+.cart-table tr:nth-child(even) {
+  background-color: var(--background-grey);
+}
+
+#shopping-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shopping-cart div {
+  text-align: center;
+  margin-top: 60px;
+}
+
+#cart-is-empty-message {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+}
+
+#checkout-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+#checkout-button {
+  margin-top: 16px;
+  background-color: var(--light-pink);
+  border: none;
+  height: 40px;
+  width: 130px;
+  font-size: var(--font-size);
+  color: white;
+  cursor: pointer;
+}
+
+#checkout-button:hover {
+  color: var(--background-grey);
+  scale: 1.1;
+  border-radius: 5px;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+#shopping-cart table tr td {
+  text-align: center;
+}
+
+#shopping-cart table tr td i {
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+#shopping-cart table tr td i:hover {
+  color: var(--light-pink);
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+/* Checkout form styling */
+#checkout-form {
+  display: grid;
+  padding: 40px;
+  gap: 20px;
+}
+
+#checkout-form h1 {
+  color: #dc7957;
+}
+
+#checkout-form input {
+  outline: none;
+  border: solid 1px #dc7957;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+#checkout-form input::placeholder {
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+#checkout-modal {
+  background-color: white;
+  position: relative;
+  border-radius: 10px;
+}
+
+#confirm-button {
+  padding: 8px;
+  border: none;
+  background-color: #dc7957;
+  color: white;
+  border-radius: 3px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#confirm-button:hover {
+  background-color: #ff7f3f;
+}

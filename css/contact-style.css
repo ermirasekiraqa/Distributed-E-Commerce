@@ -1,0 +1,148 @@
+:root {
+  /* CSS variables */
+  --padding: 3rem;
+  --background-grey: #eeeeee;
+  --light-grey: #7c7a7a;
+  --light-pink: #dc5774;
+  --font-size: 14px;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Entry styling */
+.entry {
+  background-image: url("../images/glasses-beach-background1.jpg");
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+  background-origin: padding-box;
+}
+
+/* Contact styling */
+#contact-details {
+  padding: var(--padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+#contact-details .details {
+  width: 40%;
+}
+
+#contact-details .details span,
+#form-details form span {
+  padding-bottom: 0px;
+  font-size: var(--font-size);
+}
+
+#contact-details .details h2,
+#form-details form h2 {
+  font-size: 26px;
+  line-height: 35px;
+  padding: 20px 0;
+}
+
+#contact-details .details h3 {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+#contact-details .details li {
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+}
+
+#contact-details .details li i {
+  font-size: 14px;
+  padding-right: 22px;
+}
+
+#contact-details .details li p {
+  margin: 0;
+  font-size: 14px;
+}
+
+#contact-details .map iframe {
+  height: 400px;
+  width: 400px;
+
+}
+
+#form-details {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding: var(--padding);
+  background-color: var(--background-grey);
+}
+
+#form-details form {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  outline: none;
+  margin-bottom: 20px;
+  border: 1px solid #e1e1e1;
+}
+
+#form-details button {
+  margin-top: 0;
+  background-color: var(--light-pink);
+  border: none;
+  height: 40px;
+  width: 130px;
+  font-size: var(--font-size);
+  color: white;
+  cursor: pointer;
+}
+
+#form-details button {
+  color: var(--background-grey);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+#form-details .people div {
+  padding-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+}
+
+#form-details .people img {
+  max-width: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+#form-details .people div p {
+  white-space: nowrap;
+  margin: 0;
+  font-size: var(--font-size);
+  line-height: 25px;
+}
+
+#form-details .people div p span {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--light-pink);
+}

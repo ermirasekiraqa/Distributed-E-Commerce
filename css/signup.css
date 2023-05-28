@@ -1,0 +1,93 @@
+:root {
+  --light-pink: #dc5774;
+  --background-grey: #eeeeee;
+  --light-grey: #7c7a7a;
+}
+
+body {
+  background-color: var(--background-grey);
+}
+
+#signup-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  font-size: 6px;
+  box-shadow: -5px -10px 10px 2px #d9d9d9, 5px 10px 15px 2px #d9d9d9,
+    -5px 10px 10px 2px #d9d9d9, 5px -10px 15px 2px #d9d9d9;
+}
+
+#signup-form input {
+  padding: 8px;
+  border-radius: 3px;
+  border: solid 1px var(--light-pink);
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+#signup-form input::placeholder {
+  font-size: 14px;
+}
+
+#signup-button {
+  background-color: var(--light-pink);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+#signup-button:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+#signup-form h1 {
+  color: var(--light-pink);
+  font-size: 24px;
+}
+
+.container {
+  display: grid;
+  place-content: center;
+}
+
+.container a {
+  justify-self: center;
+  font-size: 14px;
+  color: var(--light-pink);
+  margin: 2rem 0;
+}
+
+.container a:hover {
+  scale: 1.2;
+}
+
+.container p {
+  font-size: 12px;
+}
+
+.registration-successful {
+  text-align: center;
+}
+
+.registration-successful p {
+  color: var(--light-grey);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.registration-successful p a {
+  color: var(--light-pink);
+}
+
+.registration-successful p a:hover {
+  font-size: 18px;
+}

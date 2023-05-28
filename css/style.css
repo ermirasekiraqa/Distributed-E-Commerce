@@ -1,0 +1,154 @@
+:root {
+  /* CSS variables */
+  /* --padding: 60px 200px 60px 200px; */
+  --padding: 3rem;
+  --background-grey: #eeeeee;
+  --light-grey: #7c7a7a;
+  --light-pink: #dc5774;
+  --font-size: 14px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+/* Entry styling */
+.entry {
+  padding: var(--padding);
+  background-image: url("../images/entry-background.jpg");
+}
+
+#entry-text {
+  font-size: 13px;
+}
+
+#entry-text-header {
+  margin-top: 0;
+  font-weight: 300;
+  font-size: 96px;
+  color: black;
+  max-width: 10ch;
+}
+
+.text {
+  margin-top: 0;
+  color: var(--light-grey);
+  line-height: 18pt;
+  font-size: var(--font-size);
+  max-width: 50ch;
+  text-align: justify;
+}
+
+.entry-and-about-us-button {
+  margin-top: 16px;
+  background-color: var(--light-pink);
+  border: none;
+  height: 40px;
+  width: 130px;
+  font-size: var(--font-size);
+  color: white;
+  cursor: pointer;
+}
+
+.entry-and-about-us-button:hover {
+  color: var(--background-grey);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+/* About Us styling */
+.About-And-Subscribe-Us {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  padding: var(--padding);
+  place-content: center;
+}
+
+#subscribe-us {
+  background-color: var(--background-grey);
+}
+
+.section-header {
+  font-weight: 300;
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.section-header span {
+  font-weight: 600;
+}
+
+.About-Subscribe-img img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+#About-And-Subscribe-Us-Text {
+  max-width: 70ch;
+}
+
+/* Subscribe us styling */
+#user-input-email {
+  margin-right: -4px;
+  height: 36px;
+  width: 65%;
+  border: 1px solid var(--light-pink);
+  outline: none;
+}
+
+#user-input-email::placeholder {
+  font-size: 14px;
+  padding: 5px;
+}
+
+#subscribe-us-title {
+  font-size: 16px;
+}
+
+/* Service info styling */
+.service-info {
+  padding: var(--padding);
+  display: flex;
+  justify-content: center;
+}
+
+.service-info-divs {
+  display: flex;
+}
+
+.service-info-divs img {
+  width: 40%;
+}
+
+.text-and-button p {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.text-and-button button {
+  background-color: black;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 130px;
+  font-size: var(--font-size);
+}
+
+.text-and-button button:hover {
+  font-size: 16px;
+  font-weight: 600;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-out;
+  cursor: pointer;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css"
+    href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css\normalize.css" />
+  <link rel="stylesheet" href="css\login.css" />
+
+  <!-- <script defer src="js\login.js"></script> -->
+
+  <title>Log in</title>
+
+  <link rel="icon" type="image/x-icon" href="images\favicon.png">
+</head>
+
+<body>
+  <main>
+    <form action="login.php" method="POST" id="login-form">
+      <h1>Welcome back!</h1>
+      <input type="email" name="email" id="email" placeholder="Email" required="true" />
+      <input type="password" name="password" id="password" placeholder="Password" required="true" minlength="5" />
+      <button type="submit">Log In</button>
+    </form>
+    <a id="signup-link" href="signup.html">Don't have an account? Click here to sign up!</a>
+    <a id="main-page-link" href="index.html">
+      <i class="fa fa-arrow-left"></i> Go to main page</a>
+  </main>
+</body>
+
+</html>
