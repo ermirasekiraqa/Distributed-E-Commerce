@@ -58,12 +58,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (password_verify($password, $row['password'])) {
       // Password is correct, set session variables and redirect to home page
+     
       $_SESSION['email'] = $email;
       $_SESSION['role'] = $row['role']; // Store the role value in session
       if ($row['role'] == 'admin') {
         header("Location: admin_dashboard.php");
       } else {
-        header("Location: index.html");
+        // header("Location: index.html");
+        echo '<script>
+                localStorage.setItem("user_id", ' . $row['id'] . ');
+                window.location = "index.html";
+              </script>';
       }
       exit();
     } else {
@@ -87,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <main>
                 <div class="registration-successful">
                     <p>Incorrect password.</p>
-                    <p id="login-link">Please <a href="login.html">try again</a> or <a href="forgot_password.html">reset your password</a>.</p>
+                    <p id="login-link">Please <a href="login.html">try again</a>.</p>
                 </div>
             </main>
             </body>

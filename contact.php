@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+echo '<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,8 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <link rel="stylesheet" href="css\normalize.css">
     <link rel="stylesheet" href="css\common.css">
     <link rel="stylesheet" href="css\contact-style.css">
@@ -65,10 +67,7 @@
                 </div>
             </div>
             <address class="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </address>
         </section>
 
@@ -109,8 +108,11 @@
                 </div>
 
             </div>
-        </section>
-        <section class="chat-box-container">
+        </section>';
+
+
+        if (isset($_SESSION['email']) && isset($_SESSION['role']) && $_SESSION['role'] === 'customer') {
+            echo '<section class="chat-box-container">
             <div class="chatbox">
                 <div class="chatbox-button">
                     <button id="chatbox-button"><img src="images/chatbox-icon.svg" /></button>
@@ -135,18 +137,20 @@
                     </div> -->
                 </div>
             </div>
-        </section>
-        <script>
-            // let socket = io("http://localhost:4000");
-            let chatboxButton = document.getElementById("chatbox-button");
-            chatboxButton.addEventListener("click", function () {
-                let socket = io("http://localhost:4000");
-                socket.emit("message", "hello");
-                console.log('here');
-                // socket.cn()
-            })
-        </script>
-    </main>
+        </section>';
+        echo '<script>
+        // let socket = io("http://localhost:4000");
+        let chatboxButton = document.getElementById("chatbox-button");
+        chatboxButton.addEventListener("click", function () {
+            let socket = io("http://localhost:4000");
+            socket.emit("message", "hello");
+            console.log("here");
+            // socket.cn()
+        })
+    </script>';
+        }
+
+    echo '</main>
     <footer>
         <section class="useful-info">
             <div class="get-in-touch">
@@ -196,10 +200,11 @@
     </footer>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
-            (function () {
-                emailjs.init('DHPr1WNY7fh4Bumzr');
-            })();
+        (function() {
+            emailjs.init("DHPr1WNY7fh4Bumzr");
+        })();
     </script>
 </body>
 
-</html>
+</html>';
+?>
