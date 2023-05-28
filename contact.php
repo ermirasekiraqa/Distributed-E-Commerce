@@ -13,6 +13,8 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="css\normalize.css">
     <link rel="stylesheet" href="css\common.css">
     <link rel="stylesheet" href="css\contact-style.css">
+    <link rel="stylesheet" href="css/chat-style.css">
+
 
     <script defer src="js\header-functions.js"></script>
     <script defer src="js\contact.js"></script>
@@ -113,41 +115,19 @@ echo '<!DOCTYPE html>
 
 if (isset($_SESSION['email']) && isset($_SESSION['role']) && $_SESSION['role'] === 'customer') {
     echo '<section class="chat-box-container">
-            <div class="chatbox">
+            <div class="chatbox" id="chatbox">
                 <div class="chatbox-button">
                     <button id="chatbox-button"><img src="images/chatbox-icon.svg" /></button>
-                </div>
-                <div class="chatbox-support" id="chatbox-support">
-                    <!-- <div class="chatbox-header">
-                        <div class="chatbox-image-header">
-                            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png"
-                                alt="image">
-                        </div>
-                        <div class="chatbox-content-header">
-                            <h4 class="chatbox-heading-header">Chat support</h4>
-                            <p class="chatbox-description-header">How can we help you?</p>
-                        </div>
-                    </div> -->
-                    <!-- <div class="chatbox-messages">
-                        <div></div>
-                    </div> -->
-                    <!-- <div class="chatbox-input">
-                        <input type="text" placeholder="Write a message...">
-                        <button class="chatbox-send-footer send-button">Send</button>
-                    </div> -->
                 </div>
             </div>
         </section>';
     echo '<script>
-         let socket = io("http://localhost:4000");
-        let chatboxButton = document.getElementById("chatbox-button");
-        chatboxButton.addEventListener("click", function () {
-            socket.emit("create-room", {userId: localStorage.getItem("user_id")});
-            console.log("here");
-        })
-        socket.on("dispay-message",(data)=>{
-            console.log(data)
-        })
+    let socket = io("http://localhost:4000");
+    let chatboxButton = document.getElementById("chatbox-button");
+    const messages = []
+    chatboxButton.addEventListener("click", function () {
+        window.location = "chat.html";
+    })
     </script>';
 }
 
