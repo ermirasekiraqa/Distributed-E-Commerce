@@ -13,12 +13,18 @@ body {
     background-color: var(--background-grey);
 }
 
+#chats-main-container {
+    display: flex;
+    justify-content: center;
+}
+
 .users-container {
     padding: var(--padding);
 }
 
 #header {
     color: var(--light-pink);
+    margin-left: 28px;
 }
 
 #participant {

@@ -75,9 +75,21 @@
         
             messageContainer.innerHTML = ''
                 ul.innerHTML = ''
+
             data?.messages?.map(message => {
                 const messageInput = document.createElement("li");
-                messageInput.innerText = message.content
+                const contentDiv = document.createElement('div')
+                contentDiv.className = 'message-content-div'
+                const pTag = document.createElement('p')
+                pTag.className = 'time-created'
+                const messageText = document.createElement('p')
+                messageText.className = 'message-text'
+                messageText.innerText = message.content
+                pTag.innerText =`${new Date(message.created_at).toGMTString()}`
+                contentDiv.append(messageText, pTag)
+
+
+                messageInput.append(contentDiv)
                 messageInput.className = message.creator_id === Number(localStorage.getItem('user_id'))? 'user-message':'admin-message'
                 ul.append(messageInput)
                 messages.push(message)
@@ -88,7 +100,6 @@
 
         socket.on("display-message", (data) => {
             const dataReceived = JSON.parse(data)
-            console.log('dataRwceived ', dataReceived)
             roomParticipant1 = dataReceived.participant1
             roomParticipant2 = dataReceived.participant2
         })
@@ -99,7 +110,7 @@
             event.preventDefault();
             let value = textarea.value
             
-            console.log("Local Storage", localStorage.getItem("user_id"));
+            
             if (localStorage.getItem("user_id")) {
                 creatorId = Number(localStorage.getItem("user_id"))
                 receiverId = sessionStorage.getItem('participant_id')?Number(sessionStorage.getItem('participant_id')):roomParticipant1 === creatorId ? roomParticipant2 : roomParticipant1

@@ -14,10 +14,25 @@ if (isset($_SESSION['email'])) {
         echo '<!DOCTYPE html>
 <html>
 <head>
-    <title>Order Table</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin" />
+    <link rel="stylesheet" href="css\normalize.css">
+    <link rel="stylesheet" href="css\common.css">
     <link rel="stylesheet" href="css/product-table.css" />
+
+    <script defer src="js\header-functions.js"></script>
+
+    <title>Order Table</title>
 </head>
 <body>
+    <header>
+    
+    </header>
     <table>
         <caption>Orders List</caption>
         <thead>
@@ -56,7 +71,7 @@ if (isset($_SESSION['email'])) {
             echo "<td>{$row['payment_method']}</td>";
             echo "<td>{$row['status']}</td>";
             echo "<td>{$row['created_at']}</td>";
-            echo "<td><a href=\"order-products-table.php?order_id={$row['order_id']}\">View Order Products</a></td>"; // Button with link
+            echo "<td id='view-order-products-anchor'><a href=\"order-products-table.php?order_id={$row['order_id']}\">View Order Products</a></td>"; // Button with link
             echo "</tr>";
         }
         echo '</tbody>

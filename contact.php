@@ -23,6 +23,7 @@ echo '<!DOCTYPE html>
     <title>Contact</title>
 
     <link rel="icon" type="image/x-icon" href="images\favicon.png">
+    
 </head>
 
 <body>
@@ -121,15 +122,29 @@ if (isset($_SESSION['email']) && isset($_SESSION['role']) && $_SESSION['role'] =
                 </div>
             </div>
         </section>';
+
+        echo '<script>
+          echo "window.addEventListener(\'scroll\', function() {
+            const floatingButton = document.getElementById(\'chatbox-button\');
+            const desiredPosition = window.scrollY + window.innerHeight - floatingButton.offsetHeight - 20;
+            floatingButton.style.top = desiredPosition + \'px\';
+        });";
+    </script>';
+       
+        
     echo '<script>
+    
     let socket = io("http://localhost:4000");
     let chatboxButton = document.getElementById("chatbox-button");
     const messages = []
     chatboxButton.addEventListener("click", function () {
         window.location = "chat.html";
     })
+    
     </script>';
 }
+
+
 
 echo '</main>
     <footer>
@@ -185,6 +200,7 @@ echo '</main>
             emailjs.init("DHPr1WNY7fh4Bumzr");
         })();
     </script>
+    
 </body>
 
 </html>';

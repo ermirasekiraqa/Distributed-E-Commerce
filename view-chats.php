@@ -22,6 +22,7 @@ if (!isset($_SESSION['email'])) {
           <link rel="stylesheet" href="css\common.css" />
           <link rel="stylesheet" href="css\view-chats.css" />
         
+          <script defer src="js\header-functions.js"></script>
           <script src="http://localhost:4000/socket.io/socket.io.js"></script>        
         
           <title>Chats</title>
@@ -30,7 +31,10 @@ if (!isset($_SESSION['email'])) {
         </head>
         
         <body>
-        <main>
+        <header>
+        
+        </header>
+        <main id="chats-main-container">
         <div class="users-container">';
         // Database connection parameters
         $host = 'localhost';
@@ -70,7 +74,7 @@ if (!isset($_SESSION['email'])) {
                         $participantFirstName = $secondRow['name'];
                         $participantLastName = $secondRow['last_name'];
                     }
-                echo "<li id='participant' class='".$idToShow."'>User: " . $participantFirstName . " " . $participantLastName ."</li>";
+                echo "<li id='". $idToShow ."' class='participant'>User: " . $participantFirstName . " " . $participantLastName ."</li>";
                 echo "<br>";
             }
             echo "</ul>
@@ -79,11 +83,20 @@ if (!isset($_SESSION['email'])) {
             echo 
                 '<script>
                     let socket = io("http://localhost:4000");
-                    let participant = document.getElementById("participant");
-                    participant.addEventListener("click", function() {
-                        sessionStorage.setItem("participant_id", participant.className);
+                    const listItems = document.getElementsByClassName("participant");
+                    // let participant = document.getElementById("participant");
+                    // Iterate over the list items and assign an event listener
+                    for (let i = 0; i < listItems.length; i++) {
+                    listItems[i].addEventListener("click", function() {
+                        sessionStorage.setItem("participant_id", listItems[i].id);
                         window.location = "chat.html";
                     });
+                    }
+                    // console.log("participant ", participant)
+                    // participant.addEventListener("click", function() {
+                    //     sessionStorage.setItem("participant_id", participant.className);
+                    //     window.location = "chat.html";
+                    // });
                 </script>';
 
             echo "</main>
