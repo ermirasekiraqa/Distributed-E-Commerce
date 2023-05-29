@@ -161,65 +161,82 @@ echo '<!DOCTYPE html>
 <html>
 
 <head>
-    <title>User Management</title>
-    <link rel="stylesheet" href="css\add-delete-edit_product.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin" />
+    <link rel="stylesheet" href="css\normalize.css">
+    <link rel="stylesheet" href="css\common.css">
+    <link rel="stylesheet" href="css\add-delete-edit_product.css" />
+
+    <script defer src="js\header-functions.js"></script>
+
+    <title>Admin Panel</title>
 </head>
 
 <body>
+    <header>
+    
+    </header>
 
+    <main id="main-container">
     <div class="container">
-        <div class="form user-form">
-            <h1>Add User</h1>
-            <!-- Add User Form -->
-            <form method="post" action="">
-                <input type="hidden" name="action" value="add">
-                <input type="text" placeholder="Name" name="name" required><br>
-                <input type="text" placeholder="Last name" name="last_name" required><br>
-                <input type="email" placeholder="Email" name="email" required><br>
-                <input type="password" placeholder="Password" name="password" required><br>
-                <input type="text" placeholder="Phone number" name="phone_number" required><br>
-                <input type="text" placeholder="Address" name="address" required><br>
-                <input type="text" placeholder="City" name="city" required><br>
-                <input type="text" placeholder="Country" name="country" required><br>
-                <button class="form-button" type="submit" value="Add User">Add User</button>
-            </form>
-        </div>
+    <div class="form user-form">
+        <h1>Add User</h1>
+        <!-- Add User Form -->
+        <form method="post" action="">
+            <input type="hidden" name="action" value="add">
+            <input type="text" placeholder="Name" name="name" required><br>
+            <input type="text" placeholder="Last name" name="last_name" required><br>
+            <input type="email" placeholder="Email" name="email" required><br>
+            <input type="password" placeholder="Password" name="password" required><br>
+            <input type="text" placeholder="Phone number" name="phone_number" required><br>
+            <input type="text" placeholder="Address" name="address" required><br>
+            <input type="text" placeholder="City" name="city" required><br>
+            <input type="text" placeholder="Country" name="country" required><br>
+            <button class="form-button" type="submit" value="Add User">Add User</button>
+        </form>
+    </div>
 
-        <div class="form user-form">
-            <!-- Delete User Form -->
-            <h1>Delete User</h1>
-            <form method="post" action="">
-                <input type="hidden" name="action" value="delete">
-                <input type="number" placeholder="User ID" name="user_id" required><br>
-                <button class="form-button" type="submit" value="Delete User">Delete User</button>
-            </form>
-            <a href="user-table.php" target="_blank">
-                <button class="form-button user-list-button">User List</button>
-            </a>
-        </div>
+    <div class="form user-form">
+        <!-- Delete User Form -->
+        <h1>Delete User</h1>
+        <form method="post" action="">
+            <input type="hidden" name="action" value="delete">
+            <input type="number" placeholder="User ID" name="user_id" required><br>
+            <button class="form-button" type="submit" value="Delete User">Delete User</button>
+        </form>
+        <a href="user-table.php" target="_blank">
+            <button class="form-button user-list-button">User List</button>
+        </a>
+    </div>
 
 
-        <div class="form user-form">
-            <!-- Update User Form -->
-            <h1>Update User</h1>
-            <form method="post" action="">
-                <input type="hidden" name="action" value="update">
-                <input type="number" placeholder="User Id" name="user_id" required><br>
-                <input type="text" placeholder="Name" name="name"><br>
-                <input type="text" placeholder="Last name" name="last_name"><br>
-                <input type="email" placeholder="Email" name="email"><br>
-                <input type="password" placeholder="Password" name="password"><br>
-                <input type="text" placeholder="Phone number" name="phone_number"><br>
-                <input type="text" placeholder="Address" name="address"><br>
-                <input type="text" placeholder="City" name="city"><br>
-                <input type="text" placeholder="Country" name="country"><br>
-                <button class="form-button " type="submit" value="Update User">Update User</button>
-            </form>
-            <a href="user-table.php" target="_blank">
-                <button class="form-button user-list-button-update">User List</button>
-            </a>
-        </div>
+    <div class="form user-form">
+        <!-- Update User Form -->
+        <h1>Update User</h1>
+        <form method="post" action="">
+            <input type="hidden" name="action" value="update">
+            <input type="number" placeholder="User Id" name="user_id" required><br>
+            <input type="text" placeholder="Name" name="name"><br>
+            <input type="text" placeholder="Last name" name="last_name"><br>
+            <input type="email" placeholder="Email" name="email"><br>
+            <input type="password" placeholder="Password" name="password"><br>
+            <input type="text" placeholder="Phone number" name="phone_number"><br>
+            <input type="text" placeholder="Address" name="address"><br>
+            <input type="text" placeholder="City" name="city"><br>
+            <input type="text" placeholder="Country" name="country"><br>
+            <button class="form-button " type="submit" value="Update User">Update User</button>
+        </form>
+        <a href="user-table.php" target="_blank">
+            <button class="form-button user-list-button-update">User List</button>
+        </a>
+    </div>
+</div>
+    </main>
 </body>
 
 </html>';

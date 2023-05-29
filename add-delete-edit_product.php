@@ -140,99 +140,110 @@ if (isset($_SESSION['email'])) {
 <html>
 
 <head>
-    <title>Admin Panel</title>
-    <link rel="stylesheet" href="css\add-delete-edit_product.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin" />
+    <link rel="stylesheet" href="css\normalize.css">
+    <link rel="stylesheet" href="css\common.css">
+    <link rel="stylesheet" href="css\add-delete-edit_product.css" />
 
+    <script defer src="js\header-functions.js"></script>
+
+    <title>Admin Panel</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="form">
-            <h1>Add Product</h1>
-            <form action="" method="post">
-                <input type="hidden" name="action" value="add">
-                <input type="text" placeholder="Name" name="name" required><br><br>
-                <input type="number" placeholder="Price" name="price" step="0.01" required><br><br>
-                <input type="text" placeholder="Description" name="description" required><br><br>
-                <div class="warning">Image file must be of format: filename</div>
-                <input type="text" placeholder="Image-URL" name="image_url" required><br><br>
-                <input type="text" placeholder="Brand" name="brand" required><br><br>
-                <!-- <input type="text" placeholder="Category" name="category" required><br><br> -->
-                <!-- <input type="submit" value="Add Product"> -->
-                <!--  <div class="radio-group">
-        <input type="radio" id="male" name="category" value="male" required>
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="category" value="female" required>
-        <label for="female">Female</label>
-    </div><br><br> -->
-                <div class="category-group">
-                    <label for="category">
-                        <p>Category:</p>
-                    </label>
-                    <div class="radio-group">
-                    <input type="radio" id="men" name="category" value="Men" >
-
-
-                    <label for="Men">
-                        <p>Men</p>
-                    </label>
-                    <input type="radio" id="women" name="category" value="Women" >
-                    <label for="Women">
-                        <p>Women</p>
-                    </label>
-                </div>
-            </div><br><br>
-                <button class="form-button" type="submit" value="Add Product">Add Product</button>
-            </form>
-
-        </div>
-        <div class="form">
-            <h1>Delete Product</h1>
-            <form action="" method="post">
-                <input type="hidden" name="action" value="delete">
-                <input type="number" placeholder="Product-ID" id="productID" name="product_id" required><br><br>
-                <button class="form-button" type="submit" value="Delete Product">Delete Product</button>
-            </form>
-            <a href="product-table.php" target="_blank">
-                <button class="form-button product-list-button-delete">Product List</button>
-            </a>
-
-        </div>
-        <div class="form">
-            <h1>Update Product</h1>
-            <form action="" method="post">
-                <input type="hidden" name="action" value="update">
-                <input type="number" placeholder="Product-ID" name="product_id" required><br><br>
-                <input type="text" placeholder="Name" name="name"><br><br>
-                <input type="number" placeholder="Price" name="price" step="0.01"><br><br>
-                <input type="text" placeholder="Description" name="description" step="0.01"><br><br>
-                <input type="text" placeholder="Image-URL" name="image_url"><br><br>
-                <input type="text" placeholder="Brand" name="brand"><br><br>
-                <!-- <input type="text" placeholder ="Category"name="category" ><br><br> -->
-                <div class="category-group">
-                    <label for="category">
-                        <p>Category:</p>
-                    </label>
-                    <div class="radio-group">
-                        <input type="radio" id="men" name="category" value="Men" >
-
-
-                        <label for="Men">
-                            <p>Men</p>
+    <header>
+    
+    </header>
+    <main id="main-container">
+        <div class="container">
+            <div class="form">
+                <h1>Add Product</h1>
+                <form action="" method="post">
+                    <input type="hidden" name="action" value="add">
+                    <input type="text" placeholder="Name" name="name" required><br><br>
+                    <input type="number" placeholder="Price" name="price" step="0.01" required><br><br>
+                    <input type="text" placeholder="Description" name="description" required><br><br>
+                    <div class="warning">Image file must be of format: filename</div>
+                    <input type="text" placeholder="Image-URL" name="image_url" required><br><br>
+                    <input type="text" placeholder="Brand" name="brand" required><br><br>
+                    <!-- <input type="text" placeholder="Category" name="category" required><br><br> -->
+                    <!-- <input type="submit" value="Add Product"> -->
+                    <!--  <div class="radio-group">
+                    <input type="radio" id="male" name="category" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="category" value="female" required>
+                    <label for="female">Female</label>
+                    </div><br><br> -->
+                    <div class="category-group">
+                        <label for="category">
+                            <p>Category:</p>
                         </label>
-                        <input type="radio" id="women" name="category" value="Women" >
-                        <label for="Women">
-                            <p>Women</p>
+                        <div class="radio-group">
+                            <input type="radio" id="men" name="category" value="Men" >
+                            <label for="Men">
+                                <p>Men</p>
+                            </label>
+                            <input type="radio" id="women" name="category" value="Women" >
+                            <label for="Women">
+                                <p>Women</p>
+                            </label>
+                        </div>
+                    </div><br><br>
+                    <button class="form-button" type="submit" value="Add Product">Add Product</button>
+                </form>
+            </div>
+            <div class="form">
+                <h1>Delete Product</h1>
+                <form action="" method="post">
+                    <input type="hidden" name="action" value="delete">
+                    <input type="number" placeholder="Product-ID" id="productID" name="product_id" required><br><br>
+                    <button class="form-button" type="submit" value="Delete Product">Delete Product</button>
+                </form>
+                <a href="product-table.php" target="_blank">
+                    <button class="form-button product-list-button-delete">Product List</button>
+                </a>
+            </div>
+            
+            <div class="form">
+                <h1>Update Product</h1>
+                <form action="" method="post">
+                    <input type="hidden" name="action" value="update">
+                    <input type="number" placeholder="Product-ID" name="product_id" required><br><br>
+                    <input type="text" placeholder="Name" name="name"><br><br>
+                    <input type="number" placeholder="Price" name="price" step="0.01"><br><br>
+                    <input type="text" placeholder="Description" name="description" step="0.01"><br><br>
+                    <input type="text" placeholder="Image-URL" name="image_url"><br><br>
+                    <input type="text" placeholder="Brand" name="brand"><br><br>
+                    <!-- <input type="text" placeholder ="Category"name="category" ><br><br> -->
+                    <div class="category-group">
+                        <label for="category">
+                            <p>Category:</p>
                         </label>
-                    </div>
-                </div><br><br>
-                <button class="form-button" type="submit" value="Update Product">Update Product</button>
-            </form>
-            <a href="product-table.php" target="_blank">
-                <button class="form-button product-list-button">Product List</button>
-            </a>
+                        <div class="radio-group">
+                            <input type="radio" id="men" name="category" value="Men" >
+                            <label for="Men">
+                                <p>Men</p>
+                            </label>
+                            <input type="radio" id="women" name="category" value="Women" >
+                            <label for="Women">
+                                <p>Women</p>
+                            </label>
+                        </div>
+                    </div><br><br>
+                    <button class="form-button" type="submit" value="Update Product">Update Product</button>
+                </form>
+                <a href="product-table.php" target="_blank">
+                    <button class="form-button product-list-button">Product List</button>
+                </a>
+            </div>
         </div>
+    </main>
 </body>
 
 </html>';

@@ -2,20 +2,21 @@
     --light-pink: #dc5774;
     --background-grey: #eeeeee;
     --light-grey: #7c7a7a;
-  }
-  body{
-   
-/* background-color: var(--background-grey); */
-background-image: url('../images/entry-background.jpg');
-background-repeat: no-repeat;
-background-position: center center;
-background-attachment: fixed;
-background-size: cover;
-opacity: 0.99;
+}
 
-  }
+body {
+
+    background-image: url('../images/entry-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.99;
+
+}
+
 table {
-    
+
     font-family: 'Ubuntu', sans-serif;
     width: 70%;
     margin: 0 auto;
@@ -24,8 +25,8 @@ table {
     overflow: hidden;
     background-color: white;
     box-shadow: -5px -10px 10px 2px #d9d9d9, 5px 10px 15px 2px #d9d9d9,
-    -5px 10px 10px 2px #d9d9d9, 5px -10px 15px 2px #d9d9d9;
-    
+        -5px 10px 10px 2px #d9d9d9, 5px -10px 15px 2px #d9d9d9;
+
 
 }
 
@@ -43,7 +44,7 @@ thead th {
     color: #fff;
     text-align: left;
     padding: 10px;
-   
+
 }
 
 tbody td {
@@ -61,8 +62,18 @@ tbody tr:hover {
     color: #fff;
 }
 
-td img{
-    width: 140px; /* Adjust the width as needed */
-  height: 100px; /* Adjust the height as needed */
-  object-fit: center;
+td img {
+    width: 140px;
+    /* Adjust the width as needed */
+    height: 100px;
+    /* Adjust the height as needed */
+    object-fit: center;
+}
+
+#view-order-products-anchor a {
+    text-decoration: underline;
+}
+
+#view-order-products-anchor a:hover {
+    font-weight: bold;
 }

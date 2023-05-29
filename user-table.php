@@ -14,10 +14,25 @@ if (isset($_SESSION['email'])) {
         echo '<!DOCTYPE html>
         <html>
         <head>
-            <title>User Table</title>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" type="text/css"
+                href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+            <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin" />
+            <link rel="stylesheet" href="css\normalize.css">
+            <link rel="stylesheet" href="css\common.css">
             <link rel="stylesheet" href="css/product-table.css" />
+        
+            <script defer src="js\header-functions.js"></script>
+        
+            <title>User Table</title>
         </head>
         <body>
+            <header>
+            
+            </header>
             <table>
                 <caption>User List</caption>
                 <thead>

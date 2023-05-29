@@ -146,3 +146,20 @@ body {
   font-weight: 600;
   color: var(--light-pink);
 }
+
+.chat-box-container {
+  padding: var(--padding);
+  display: flex;
+  justify-content: end;
+}
+
+#chatbox-button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  position: sticky;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}

@@ -47,7 +47,7 @@ body {
     list-style: none;
 	padding: 10px 15px;
 	display: grid;
-	gap:5px;
+
 
 }
 
@@ -56,11 +56,13 @@ body {
     border-radius: 10px;
     color: white;
     text-align: left;
+    margin: 5px;
 }
 
 .user-message {
     color: var(--light-grey);
     text-align: right;
+    margin: 5px;
 }
 
 #chat-form {
@@ -69,7 +71,6 @@ body {
 }
 #chat-form textarea {
 	resize: none;
-	border: none;
 }
 
 #send-message-button {
@@ -100,4 +101,33 @@ body {
   /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #f1f1f1;
+  }
+
+  .message-content-div {
+    /* display: grid; */
+    /* gap:2px */
+    margin: 0;
+    padding:0
+  }
+
+  .admin-message .time-created {
+    font-size: 8px;
+    color: black;
+    text-align: right;
+  }
+
+  .admin-message .message-text {
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .user-message .time-created {
+    font-size: 8px;
+    color: black;
+    text-align: right;
+  }
+
+  .user-message .message-text {
+    font-weight: 500;
+    text-align: right;
   }
